@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: blanchedalmond;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .color-code {
+    width: 600px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+  }
+  
+  .color-options {
+    display: flex;
+    margin-top: 20px;
+  }
+  
+  .color-option {
+    width: 100px;
+    height: 100px;
+    margin: 0 10px;
+    cursor: pointer;
+  }
+  
