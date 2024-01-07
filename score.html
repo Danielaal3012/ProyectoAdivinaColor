@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Puntuación</title>
+    <link rel="stylesheet" href="botonstyle.css" />
+    <script
+      src="https://kit.fontawesome.com/9d13d29e8a.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/gsap@3.9.1/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3.9.1/dist/Physics2DPlugin.min.js"></script>
+
     <script src="score.js"></script>
-    <script src="https://kit.fontawesome.com/9d13d29e8a.js" crossorigin="anonymous"></script></head>
-<body>
-    
-<h1>Puntuación</h1>
+    <script src="botones.js"></script>
+  </head>
+  <body>
+    <h1>Puntuación</h1>
 
-<div>
-    <p>Aciertos: <span id="iconosAcierto"></span></p>
-    <p>Fallos: <span id="iconosFallos"></span></p>
-</div>
+    <div>
+      <p>Aciertos: <span id="iconosAcierto"></span></p>
+      <p>Fallos: <span id="iconosFallos"></span></p>
+    </div>
 
-<button onclick="sumarAcierto()">Acierto</button>
-<button onclick="sumarFallo()">Fallo</button>
-
-</body>
+    <button class="button" onclick="sumarAcierto()">Acierto</button>
+    <button class="button" onclick="sumarFallo()">Fallo</button>
+  </body>
 </html>
