@@ -1,0 +1,176 @@
+
+body {
+
+    margin: 0;
+    height: 100vh;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    
+    /* Daniela */
+    /* Transcision de color body */
+    background: linear-gradient(to right, rgb(250, 248, 186), #e5e3dd, #f5caca, rgb(250, 248, 186));
+    background-size: 200% 100%;
+    animation: colorWave 5s infinite alternate;
+    transition: background-position 1s ease;
+
+    grid-template-areas:
+    "header"
+    "colors"
+    "scores";
+  }
+
+  /*Daniela : animacion background */
+  @keyframes colorWave {
+    0%, 100% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 100% 0;
+    }
+    
+  }
+  
+  .container {
+    
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    
+    /* Daniela */
+    background-color: rgba(252, 246, 243, 0.872);
+    box-shadow: 15px 10px 10px rgba(72, 71, 71, 0.4);
+    
+    border-top-left-radius: 10%;
+    border-bottom-right-radius: 20px;
+    
+    
+  }
+  
+    
+  .colors{
+    width: 900px;
+    height: 300px;
+    display:flex;
+    flex-direction:row;
+   align-content: center;
+   justify-content: center;
+   
+
+  
+    
+  }
+   div .color-code{
+    width: 300px;
+    height: 400px;
+    align-content: center;
+    
+   }
+  
+  .color-code {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    
+    /*Daniela*/
+    border-radius: 50%;
+    
+    
+    
+  }
+  
+  
+  .color-options {
+    display:grid;
+    
+    /* Daniela */
+    width: 1fr;
+    height: 100%;
+    grid-template-columns: repeat(4, 1fr);
+   
+    align-content:space-between;
+    
+   
+   
+  }
+  
+  .color-option {
+    width: 120px;
+    height: 120px;
+    margin: 0 10px 20px;
+    cursor: pointer;
+    border-radius: 50%;
+   
+  
+    
+    
+   
+  }
+
+  
+  .score {
+    width: 100%;
+  
+    margin-top: 120px;
+    /* Daniela*/
+    display:grid;
+    grid-template-columns: repeat(2, 50%);
+    
+    /*Daniela*/
+    align-content:center;
+    font-size: 1.4em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    
+    
+
+  
+    
+  }
+
+
+  .score-correct{ /* Daniela */
+    
+    text-align: center;
+    text-transform:uppercase;
+    background-color: rgb(211, 211, 211, 0.5);
+    border-radius: 0 15px 0 10px;
+    margin-right: 5px;
+    
+   div{
+    margin-left: 15px;
+    
+   }
+   div #correctCount{
+    text-align: center;
+    font-size: 2em;
+   }
+   p{
+    text-align: left;
+   }
+  } 
+  
+  .score-wrong{ /* Danieña */
+    text-align: center;
+    text-transform:uppercase;
+    background-color: rgb(211, 211, 211);
+    border-radius: 15px 0px 20px 0px;
+    margin-left: 5px;
+    div{
+      text-align: left;
+      margin-left: 25px;
+     }
+     div #wrongCount{
+      text-align: center;
+      font-size: 2em;
+     }
+  }
+
+  /* Media query pantalla < 600px */
+  @media (min-width: 480px) {
+
+  }
