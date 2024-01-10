@@ -6,9 +6,6 @@ const wrongCountElement = document.getElementById('wrongCount');
 const colorCodeElement = document.getElementById('colorCode');
 const colorOptionsElement = document.getElementById('colorOptions');
 
-
-
-
 let correctColor;
 let correctCount = 0;
 let wrongCount = 0;
