@@ -4,19 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adivina el color</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <h1 class="loader">Adivina el color</h1>
-    <div class="container">
-        <div class="color-code" id="colorCode"></div>
-        <div class="color-options" id="colorOptions"></div>
+    <!-- <div class="container">
+        <h1 class="loader">Adivina el color</h1>
         <div class="score">
           <p>Aciertos: <span id="correctCount">0</span></p>
           <p>Fallos: <span id="wrongCount">0</span></p>
         </div>
+        <div class="color-code" id="colorCode"></div>
+        <div class="color-options" id="colorOptions"></div>
+      </div> -->
+
+      <div class="container">
+
+        <header><h1 class="loader">Adivina el color</h1></header>
+
+        <div class="scoreboard">
+            <div class="niveles">Nivel: </div>
+            <div class="aciertos">Aciertos: <span id="correctCount">0</span></div>
+            <div class="fallos">Fallos: <span id="wrongCount">0</span></div>
+        </div>
+
+        <div class="colores">
+            <section class="color-code" id="colorCode">color-code</section>
+            <aside class="color-options" id="colorOptions">color-options</aside>
+        </div>
+
+        <footer>FOOTER</footer>
+
+
       </div>
     
-<script src="codigo.js"></script>
+<script src="./codigo.js"></script>
 </body>
 </html>

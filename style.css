@@ -1,7 +1,3 @@
-body {
-    background-image: url("/background.jpg");
-}
-
 @keyframes animate8345 {
     0%,100% {
       filter: hue-rotate(0deg);
@@ -20,4 +16,97 @@ body {
     -webkit-background-clip: text;
     animation: animate8345 9s linear infinite;
     font-weight: bold;
+  }
+
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("/background.jpg");
+    /* min-width: 320px; */
+  }
+  
+  .container {
+    max-width: 800px;
+    width: 100%;
+    border-style: dotted;
+    flex-direction: column;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3em 2em auto 3em;
+    grid-template-areas: 
+    "header"
+    "scoreboard"
+    "section"
+    "aside"
+    "footer";
+  }
+
+  header {
+    text-align: center;
+    grid-area: header;
+    background-color: antiquewhite;
+  }
+
+  .scoreboard {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-area: scoreboard;
+    background-color: aliceblue;
+  }
+
+.colores {
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+}
+
+  footer {
+    text-align: center;
+    grid-area: footer;
+    background-color: bisque;
+  }
+
+
+
+ 
+  .color-code {
+    /* width: 200px;
+    height: 150px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+  }
+  
+  .color-options {
+    display: flex;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+  }
+  
+  .color-option {
+    width: 100px;
+    height: 100px;
+    margin: 0 10px;
+    cursor: pointer;
+  }
+  
+  button {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  button:hover {
+    transform: scale(1.05);
   }

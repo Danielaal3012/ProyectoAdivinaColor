@@ -1,6 +1,7 @@
 'use strict'
-//buenas compañeros aqui les envio el codigo y ya vemos entre todos como mejorarlo.
+
 // estas son las variables creadas 
+
 const correctCountElement = document.getElementById('correctCount');
 const wrongCountElement = document.getElementById('wrongCount');
 const colorCodeElement = document.getElementById('colorCode');
@@ -9,11 +10,13 @@ const colorOptionsElement = document.getElementById('colorOptions');
 let correctColor;
 let correctCount = 0;
 let wrongCount = 0;
+
 // con esta funcion es la que genera los colores aleatorios hasta 256 colores
 function getRandomColor() {
   return Math.floor(Math.random() * 256);
 }
-// 
+
+
 function generateRandomColor() {
   const red = getRandomColor();
   const green = getRandomColor();
@@ -21,9 +24,11 @@ function generateRandomColor() {
   correctColor = [red, green, blue,];
   colorCodeElement.textContent = `RGB(${red}, ${green}, ${blue})`;
   colorCodeElement.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+
 // este for es el que hace que las variaciones de color sean parecidas a la del color rgb de arriba
 //ajusta los colores al rojo verde y azul y le suma un valor aleatorio
 //y el math.min y max hace que los valores de verdad se manejen en ese rango para hacer la variacion
+
   const variations = [];
   for (let i = 0; i < 11; i++) {
     const adjustedColor = [
@@ -58,7 +63,7 @@ function renderColors() {
   shuffleColors(variations);
 
   variations.forEach(color => {
-    const colorOption = document.createElement('div');
+    const colorOption = document.createElement('button');
     colorOption.className = 'color-option';
     colorOption.style.backgroundColor = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
     colorOption.addEventListener('click', () => checkAnswer(color));
@@ -70,8 +75,7 @@ function checkAnswer(color) {
   if (
     color[0] === correctColor[0] &&
     color[1] === correctColor[1] &&
-    color[2] === correctColor[2] &&
-    color[3] === correctColor[3]
+    color[2] === correctColor[2]
     
   ) {
     correctCount++;
