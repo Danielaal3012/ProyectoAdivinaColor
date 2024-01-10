@@ -31,7 +31,7 @@
   .container {
     max-width: 800px;
     width: 100%;
-    border-style: dotted;
+    /* border-style: dotted; */
     flex-direction: column;
     align-items: center;
     display: grid;
@@ -40,8 +40,8 @@
     grid-template-areas: 
     "header"
     "scoreboard"
-    "section"
-    "aside"
+    "section1"
+    "section2"
     "footer";
   }
 
@@ -72,10 +72,7 @@
     background-color: bisque;
   }
 
-
-
- 
-  .color-code {
+  section .color-code {
     /* width: 200px;
     height: 150px; */
     display: flex;
@@ -83,14 +80,18 @@
     justify-content: center;
     color: white;
     font-size: 24px;
+    grid-area: section1;
+
   }
   
-  .color-options {
+  section .color-options {
     display: flex;
-    margin-top: 20px;
+    /* margin-top: 20px; */
+    justify-content: space-evenly;
     flex-wrap: wrap;
     gap: 15px;
-    justify-content: center;
+    grid-area: section2;
+
   }
   
   .color-option {
@@ -109,4 +110,30 @@
 
   button:hover {
     transform: scale(1.05);
+  }
+
+  @media (max-width: 600px) {
+    .container {
+
+
+        flex-direction: column;
+        align-items: center;
+        display: grid;
+        grid-template-columns: 1fr 300px;
+        grid-template-rows: 3em 2em auto auto auto 3em;
+        grid-template-areas: 
+        "header" "header"
+        "scoreboard" "scoreboard"
+        "colores" "colores"
+        "section" "section"
+        "aside" "aside"
+        "footer" "footer";
+      }
+  }
+
+  @media (max-width: 500px) {
+    :root {
+        display: none;
+
+    }
   }

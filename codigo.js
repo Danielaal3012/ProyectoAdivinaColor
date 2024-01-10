@@ -30,7 +30,7 @@ function generateRandomColor() {
 //y el math.min y max hace que los valores de verdad se manejen en ese rango para hacer la variacion
 
   const variations = [];
-  for (let i = 0; i < 11; i++) {
+  for (let i = 0; i < 8; i++) {
     const adjustedColor = [
       Math.min(255, Math.max(0, red + getRandomNumber(-25, 25))),
       Math.min(255, Math.max(0, green + getRandomNumber(-25, 25))),
@@ -105,6 +105,7 @@ function checkAnswer(color) {
     renderColors();
   }
 }
+
 function showMessage(imageSrc,width ='30%', height='40%', reset = true) {
   const image = document.createElement('img');
   image.src = imageSrc;
