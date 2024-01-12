@@ -107,7 +107,7 @@
     transition: transform 0.3s ease-in-out;
     width: 100px;
     height: 100px;
-    margin: 0 5px;
+    margin: 0 1px;
   }
 
   .color-option-svg:hover {

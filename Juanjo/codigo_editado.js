@@ -1,4 +1,3 @@
-
 'use strict';
 
 const correctCountElement = document.getElementById('correctCount');
@@ -16,7 +15,6 @@ const subirNivel = 8;
 function getRandomColor() {
   return Math.floor(Math.random() * 256);
 }
-
 
 function isColorDark(color) {
   const [r, g, b] = color.map(component => component / 255);
