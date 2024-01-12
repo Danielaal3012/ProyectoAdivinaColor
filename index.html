@@ -7,28 +7,39 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+  <!-- Etiquetas para la animación del Splash. Ha habido un lio con los relativos y absolutos, no intentes entenderlo, porque nosotros tampoco lo entendemos, solo trata de no modificarlo (y si lo haces, que sea en una copia c:) -->
+  <div class="containerRelativo"> <!--Contenedor de los Splashes-->
+      <article class="explosions" id="menssageFallo">
+            <span><img src="./Splash/splash1.png" alt="Imagen 1"></span> <!--naranja-->
+            <span><img src="./Splash/splash2.png" alt="Imagen 2"></span> <!--turquesa-->
+            <span><img src="./Splash/splash3.png" alt="Imagen 3"></span> <!--verde-->
+            <span><img src="./Splash/splash4.png" alt="Imagen 4"></span> <!--amarillo-->
+            <span><img src="./Splash/splash5.png" alt="Imagen 5"></span> <!--rojo-->
+            <span><img src="./Splash/splash6.png" alt="Imagen 5"></span> <!--morado-->
+            <span><img src="./Splash/splash7.png" alt="Imagen 5"></span> <!--negro-->
+    </article>
+  </div>
+    <!---->
+  <div class="containerAbsoluto"> <!--Contenedor del minijuego-->
+    <header><h1 class="loader">Adivina el color</h1></header><!-- Guess -->
 
-  <div class="container">
-
-    <header><h1 class="loader">Adivina el color</h1></header>
-
-    <div class="scoreboard">
-      <div class="niveles">Nivel: </div>
-      <div class="aciertos">Aciertos: <span id="correctCount">0</span></div>
-      <div class="fallos">Fallos: <span id="wrongCount">0</span></div>
+    <div class="scoreboard"> <!--Aquí van los contadores-->
+      <div class="niveles">Nivel: </div> <!--Contador de nivel-->
+      <div class="aciertos">Aciertos: <span id="correctCount">0</span></div><!--Contador de aciertos-->
+      <div class="fallos">Fallos: <span id="wrongCount">0</span></div><!--Contador de fallos-->
     </div>
 
     <div class="colores">
-      <section class="color-code" id="colorCode">color-code</section>
-      <section class="color-options" id="colorOptions">color-options</section>
+      <section class="color-code" id="colorCode">color-code</section> <!--Color que hay que encontrar-->
+      <section class="color-options" id="colorOptions">color-options</section><!--Caja de opciones-->
     </div>
 
     <footer>
-      <a href="https://github.com/Danielaal3012/ProyectoAdivinaColor">Adivina el color</a>
+      <a href="https://github.com/Danielaal3012/ProyectoAdivinaColor">:D</a> <!--Carita sonriente para no perder las energías-->
     </footer>
 
+
   </div>
-    
-<script src="./codigo.js"></script>
+<script src="codigo.js"></script>
 </body>
 </html>
