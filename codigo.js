@@ -1,5 +1,14 @@
 'use strict';
 
+// buen code
+
+// todo: modal para derrota (1 segundo después del splash)
+// todo: modal para victoria de 3
+// todo: función ejecución del splash
+// todo: sonido del splash
+// todo: cambiar los adjustedColor
+// todo: leer los comentarios
+
 const correctCountElement = document.getElementById('correctCount');
 const wrongCountElement = document.getElementById('wrongCount');
 const colorCodeElement = document.getElementById('colorCode');
@@ -36,9 +45,9 @@ function generateRandomColor() {
   const variations = [];
   for (let i = 0; i < subirNivel; i++) {
     const adjustedColor = [
-      Math.min(255, Math.max(0, red + getRandomNumber(-25, 25))),
-      Math.min(255, Math.max(0, green + getRandomNumber(-25, 25))),
-      Math.min(255, Math.max(0, blue + getRandomNumber(-25, 25)))
+      Math.min(255, Math.max(0, red + getRandomNumber(-100, 100))),
+      Math.min(255, Math.max(0, green + getRandomNumber(-100, 100))),
+      Math.min(255, Math.max(0, blue + getRandomNumber(-100, 100)))
     ];
     variations.push(adjustedColor);
   }
@@ -98,14 +107,13 @@ function checkAnswer(color) {
   ) {
     correctCount++;
     correctCountElement.textContent = correctCount.toString();
-    //Aqui separo los texContent para tener arriba los aciertos y poder hacerle lo de los niveles
+    //Aqui separo los textContent para tener arriba los aciertos y poder hacerle lo de los niveles
     if (correctCount === 3) {
       showMessage('Avanza de nivel'); // hay que cambiar el icono que sale en showMessage.
       setTimeout(() => {
         nivel++;
         correctCount = 0;
         updateLevel();
-        resetGame();
       }, 300); 
     } else {
       renderColors();
@@ -116,8 +124,10 @@ function checkAnswer(color) {
 
     if (wrongCount === 3) {
       showMessage('./assets/Splash/splash1.png');
+      // todo: funcion animacion
+      // todo: modal
       setTimeout(() => {
-        resetGame();
+        nivel = 1;
       }, 300); 
     } else {
       renderColors();
