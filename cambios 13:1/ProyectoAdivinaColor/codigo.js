@@ -104,6 +104,22 @@ function renderColors() {
   });
 }
 
+function closeModalLose() {
+  const modal = document.getElementById('modal2');
+  modal.style.display = 'none';
+  document.querySelector('.containerRelativo').style.display = 'none';
+  wrongCount = 0;
+  correctCount = 0;
+  nivel = 1;
+  correctCountElement.textContent= '0';
+  wrongCountElement.textContent= '0';
+  levelElement.textContent = `Nivel: ${nivel}`;
+  
+}
+
+btnCloseModalLoseDale.addEventListener('click', closeModalLose);
+btnCloseModalLoseMásTarde.addEventListener('click', closeModalLose);
+
 
 function checkAnswer(color) {
   if (
