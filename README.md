@@ -51,6 +51,7 @@ Requisitos y Notas:
 
     El proyecto utiliza tecnologías web estándar (HTML, CSS, JavaScript).
     Algunas secciones del código contienen comentarios informativos y aclaraciones.
+    Disponible en Android y iOs.
 
 Referencias:
 
