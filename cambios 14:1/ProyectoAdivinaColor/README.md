@@ -49,6 +49,14 @@ Requisitos y Notas:
 
     El proyecto utiliza tecnologías web estándar (HTML, CSS, JavaScript).
     Algunas secciones del código contienen comentarios informativos y aclaraciones.
+    
+Desarrollo del Proyecto:
+
+    Durante el desarrollo de este proyecto, se enfrentaron desafíos significativos al implementar las funciones modales. Inicialmente, se encontró dificultad para hacer que estas funciones operaran correctamente, y su         comportamiento no respondía como se esperaba.
+
+    La complicación principal se centró en la integración de eventos para activar las modales, específicamente la modal de derrota. Después de diversos intentos y ajustes, se llegó a la conclusión de que la solución residía en la implementación del evento onclick. Esta elección permitió la activación de la modal de derrota después de cierto tiempo transcurrido y la ejecución de otras acciones previas.
+
+    A pesar de la complejidad inicial, el equipo logró superar los obstáculos al optar por un enfoque de resolución más directo con el evento onclick. Esta solución proporcionó la funcionalidad deseada y mejoró la experiencia del usuario al presentar la modal de derrota de manera efectiva.
 
 Referencias:
 
