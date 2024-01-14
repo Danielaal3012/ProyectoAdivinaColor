@@ -27,7 +27,8 @@ Funcionalidades Clave:
         Proporciona opciones de colores para que el jugador elija la correcta.
 
     Niveles y Progresión:
-        El jugador avanza de nivel tras acumular cierto número de aciertos. Al avanzar un nivel, se aumenta la dificultad del juego, reduciendo el margen de las variaciones de los colores.
+        El jugador avanza de nivel tras acumular cierto número de aciertos. 
+Al avanzar un nivel, se aumenta la dificultad del juego, reduciendo el margen de las variaciones de los colores.
         El juego reinicia el nivel si se acumulan tres fallos.
 
 
