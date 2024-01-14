@@ -54,6 +54,6 @@ Requisitos y Notas:
 
 Referencias:
 
-    Enlace al repositorio del proyecto en GitHub se proporciona en el pie de página.
+    El enlace al repositorio del proyecto en GitHub se encuentra en el pie de página.
 
 Este resumen proporciona una visión general de la estructura y funcionalidades del proyecto "Adivina el Color". Se recomienda consultar los comentarios en el código para obtener detalles adicionales sobre su implementación.
