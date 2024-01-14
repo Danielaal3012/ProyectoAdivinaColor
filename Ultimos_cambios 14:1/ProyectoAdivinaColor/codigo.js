@@ -2,18 +2,20 @@
 
 const correctCountElement = document.getElementById('correctCount');
 const wrongCountElement = document.getElementById('wrongCount');
+const levelElement = document.querySelector('.niveles');
+
 const colorCodeElement = document.getElementById('colorCode');
 const colorOptionsElement = document.getElementById('colorOptions');
-const levelElement = document.querySelector('.niveles');
+
 const modalLose = document.getElementById('modal2');
-const btnCloseModalLoseDale = document.getElementById('closeModalLoseDale');
-const btnCloseModalLoseMásTarde = document.getElementById('closeModalLoseMásTarde');
+const btnCloseModalLose = document.getElementById('closeModalLose');
+btnCloseModalLose.addEventListener('click', closeModalLose);
 
 let correctColor;
 let correctCount = 0;
 let wrongCount = 0;
-let level = 1;
-let dificultad = 50;
+let level = 0;
+let dificultad = 51;
 
 // Generar un número entre 0 y 255
 function getRandomColor() {
@@ -65,7 +67,7 @@ function shuffleColors(colors) {
   }
 }
 
-//
+// Renderización del color RGB base y sus variaciones
 
 function renderColors() {
   colorOptionsElement.innerHTML = '';
@@ -76,6 +78,7 @@ function renderColors() {
     const svgOption = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svgOption.setAttribute('width', '100');
     svgOption.setAttribute('height', '100');
+    svgOption.setAttribute('stroke-width', '5');
     svgOption.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
     svgOption.setAttribute('viewBox', '0 0 400 300');
     svgOption.classList.add('color-option-svg');
@@ -87,7 +90,7 @@ function renderColors() {
     st15.setAttribute('class', 'st15');
     st15.setAttribute('d', 'M346.2,263.61c-0.77-20.62-23.16-39.43-25.4-58.37c-1.09-10.78,7.84-16.42,12.18-24.54 c12.8-26.89-20.48-57.76-42.7-74.27C230.14,64.43,134.91,33.7,71.88,50c-37.54,9.83-59.26,36.51-51.46,73.79 c24.84,86.09,160.02,158.6,250.9,174.36C309.84,304.24,348.56,294.69,346.2,263.61z M264.29,257.16 c-14.55-8.12-22.16-22.11-17.01-31.26c13.33-21.26,63.96,6.87,52.68,29.41C294.81,264.45,278.84,265.28,264.29,257.16z');
     st15.style.fill = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
-    st15.style.stroke = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
+    st15.style.stroke = `rgb(0,0,0)`;
     st15.style.strokeMiterlimit = '10';
 
     g.appendChild(st15);
@@ -97,7 +100,7 @@ function renderColors() {
   });
 }
 
-// Funcion Modal luego de fallo al jugar
+// Modal de reinicio de juego
 function closeModalLose() {
   const modal = document.getElementById('modal2');
   modal.style.display = 'none';
@@ -110,9 +113,6 @@ function closeModalLose() {
   levelElement.textContent = `Nivel: ${level}`;
 }
 
-btnCloseModalLoseDale.addEventListener('click', closeModalLose);
-btnCloseModalLoseMásTarde.addEventListener('click', closeModalLose);
-
 // Comprobación de la coincidencia entre el color RGB base y sus variaciones
 function checkAnswer(color) {
   if (
@@ -123,19 +123,8 @@ function checkAnswer(color) {
     correctCount++;
     correctCountElement.textContent = correctCount.toString();
 
-// Aqui separo los textContent para tener arriba los aciertos y poder hacerle lo de los niveles
-
     if (correctCount === 3) {
-      setTimeout(() => {
-        level++;
-        correctCount = 0;
-        wrongCount = 0;
-        renderColors()
         updateLevel();
-        if (dificultad != 5) {
-          dificultad = dificultad - 1
-        }
-      }, 300); 
     } else {
       renderColors();
     }
@@ -162,15 +151,25 @@ function checkAnswer(color) {
   }
 }
 
-// Funcion para subir de nivel
+// Actualizar nivel
 function updateLevel() {
+  renderColors()
+  level++;
   levelElement.textContent = `Nivel: ${level}`;
-  console.log(dificultad)
-  console.log(correctCount)
-  console.log(wrongCount)
+  correctCount = 0;
+  correctCountElement.textContent = `0`;
+  wrongCount = 0;
+  wrongCountElement.textContent = '0';
+
+  if (dificultad != 5) {
+    dificultad = dificultad - 1
+  }
+  console.log('Dificultad:', dificultad)
+  console.log('Aciertos:',correctCount)
+  console.log('Fallos:',wrongCount)
 }
 
-// Funcion RESET
+// Reiniciar juego
 function resetGame() {
   correctCount = 0;
   wrongCount = 0;
@@ -180,6 +179,6 @@ function resetGame() {
   renderColors();
 }
 
-// Inicia el juego al cargar la página
+// Iniciar juego
 updateLevel();
 renderColors();
