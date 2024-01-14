@@ -1,6 +1,5 @@
 'use strict';
 
-
 const correctCountElement = document.getElementById('correctCount');
 const wrongCountElement = document.getElementById('wrongCount');
 const colorCodeElement = document.getElementById('colorCode');
@@ -13,19 +12,22 @@ const btnCloseModalLoseMásTarde = document.getElementById('closeModalLoseMásTa
 let correctColor;
 let correctCount = 0;
 let wrongCount = 0;
-let nivel = 1;
-let subirNivel = 8;
-/* Funcion generador de color RGB*/
+let level = 1;
+let dificultad = 50;
+
+// Generar un número entre 0 y 255
 function getRandomColor() {
   return Math.floor(Math.random() * 256);
 }
-/* Funcion para cambio de color text de acuerdo a luminosidad */
+
+// Comprobación de la luminosidad del texto para variar el color de la fuente en función de ella
 function isColorDark(color) {
   const [r, g, b] = color.map(component => component / 255);
   const luminosity = 0.2126 * r + 0.7152 * g + 0.0722 * b;
   return luminosity < 0.5;
 }
-/* Funcion generador de color RGB y variaciones*/
+
+// Generar un color RGB base a partir de getRandomColor y sus variaciones
 function generateRandomColor() {
   const red = getRandomColor();
   const green = getRandomColor();
@@ -38,11 +40,11 @@ function generateRandomColor() {
   colorCodeElement.style.color = textColor;
 
   const variations = [];
-  for (let i = 0; i < subirNivel; i++) {
+  for (let i = 0; i < 8; i++) {
     const adjustedColor = [
-      Math.min(255, Math.max(0, red + getRandomNumber(-100, 100))),
-      Math.min(255, Math.max(0, green + getRandomNumber(-100, 100))),
-      Math.min(255, Math.max(0, blue + getRandomNumber(-100, 100)))
+      Math.min(255, Math.max(0, red + getRandomNumber(-dificultad, dificultad))),
+      Math.min(255, Math.max(0, green + getRandomNumber(-dificultad, dificultad))),
+      Math.min(255, Math.max(0, blue + getRandomNumber(-dificultad, dificultad)))
     ];
     variations.push(adjustedColor);
   }
@@ -62,6 +64,8 @@ function shuffleColors(colors) {
     [colors[i], colors[j]] = [colors[j], colors[i]];
   }
 }
+
+//
 
 function renderColors() {
   colorOptionsElement.innerHTML = '';
@@ -88,29 +92,28 @@ function renderColors() {
 
     g.appendChild(st15);
     svgOption.appendChild(g);
-
     svgOption.addEventListener('click', () => checkAnswer(color));
     colorOptionsElement.appendChild(svgOption);
   });
 }
-/* Funcion Modal luego de fallo al jugar */
+
+// Funcion Modal luego de fallo al jugar
 function closeModalLose() {
   const modal = document.getElementById('modal2');
   modal.style.display = 'none';
   document.querySelector('.containerRelativo').style.display = 'none';
   wrongCount = 0;
   correctCount = 0;
-  nivel = 1;
+  level = 1;
   correctCountElement.textContent= '0';
   wrongCountElement.textContent= '0';
-  levelElement.textContent = `Nivel: ${nivel}`;
-  
+  levelElement.textContent = `Nivel: ${level}`;
 }
 
 btnCloseModalLoseDale.addEventListener('click', closeModalLose);
 btnCloseModalLoseMásTarde.addEventListener('click', closeModalLose);
 
-/* Funcion verificadora de coincidencia de colores entre RGB y las opciones*/
+// Comprobación de la coincidencia entre el color RGB base y sus variaciones
 function checkAnswer(color) {
   if (
     color[0] === correctColor[0] &&
@@ -119,13 +122,19 @@ function checkAnswer(color) {
   ) {
     correctCount++;
     correctCountElement.textContent = correctCount.toString();
-    //Aqui separo los textContent para tener arriba los aciertos y poder hacerle lo de los niveles
+
+// Aqui separo los textContent para tener arriba los aciertos y poder hacerle lo de los niveles
+
     if (correctCount === 3) {
       setTimeout(() => {
-        nivel++;
+        level++;
         correctCount = 0;
         wrongCount = 0;
+        renderColors()
         updateLevel();
+        if (dificultad != 5) {
+          dificultad = dificultad - 1
+        }
       }, 300); 
     } else {
       renderColors();
@@ -142,27 +151,30 @@ function checkAnswer(color) {
         const modal = document.getElementById('modal2');
         modal.style.display = 'block';
         modal.style.zIndex = '2';
-    }, 4000);
+    }, 1500);
 
       setTimeout(() => {
-        nivel = 1;
+        level = 1;
       }, 300); 
     } else {
       renderColors();
     }
   }
 }
-/* Funcion para subir de nivel */
+
+// Funcion para subir de nivel
 function updateLevel() {
-  levelElement.textContent = `Nivel: ${nivel}`;
-  
+  levelElement.textContent = `Nivel: ${level}`;
+  console.log(dificultad)
+  console.log(correctCount)
+  console.log(wrongCount)
 }
 
- /* Funcion RESET*/
+// Funcion RESET
 function resetGame() {
   correctCount = 0;
   wrongCount = 0;
-  correctCountElement.textContent = '0';
+  correctCountElement.textContent = `0`;
   wrongCountElement.textContent = '0';
   updateLevel();
   renderColors();
