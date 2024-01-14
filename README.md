@@ -31,7 +31,6 @@ Funcionalidades Clave:
         Al avanzar un nivel, se aumenta la dificultad del juego, reduciendo el margen de las variaciones de los colores.
         El juego reinicia el nivel si se acumulan tres fallos.
 
-
     Modal de Derrota:
         Se muestra un modal si el jugador acumula tres fallos, ofreciendo la opción de intentarlo nuevamente.
 
