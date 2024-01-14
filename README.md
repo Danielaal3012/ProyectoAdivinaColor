@@ -1,5 +1,5 @@
 # ProyectoAdivinaColor
-Realizado por Daniela Alvarez, Jorge Lehmnann, Juan José Ayuso, Jorge Ortega y Jorge Martín
+Realizado por Daniela Alvarez, Jorge Lehmnann, Juan José Ayuso, Jorge Ortega y Jorge Martín.
 Este proyecto consiste en un juego interactivo desarrollado con HTML, CSS y JavaScript. El objetivo es adivinar el color correcto según su representación en formato RGB. Aquí hay un resumen de los archivos y funcionalidades clave:
 Archivos Principales:
 
