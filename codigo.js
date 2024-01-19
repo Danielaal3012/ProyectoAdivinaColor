@@ -136,6 +136,7 @@ function checkAnswer(color) {
       document.querySelector('.containerRelativo').style.display = 'block';
       document.querySelector('.containerRelativo').style.zIndex = '1';
 
+    
       setTimeout(() => {
         const modal = document.getElementById('modal2');
         modal.style.display = 'block';
