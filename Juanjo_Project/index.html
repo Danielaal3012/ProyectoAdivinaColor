@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adivina el color</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <div class="lose" id="modal2">
+    <h2>Lástima! Has perdido</h2>
+    <p>¿Quieres volver a intentarlo?</p>
+    <p id="message"></p>
+    <div class="buttonLose">
+      <button id="closeModalLose">Reintentar</button>
+  </div>
+  
+  </div>
+  <div class="containerRelativo"> <!--Contenedor de los Splashes-->
+    <article class="explosions" id="menssageFallo">
+      <span><img src="./assets/Splash/splash1.png" alt="Imagen 1"></span> <!--morado1-->
+      <span><img src="./assets/Splash/splash2.png" alt="Imagen 2"></span> <!--gris1-->
+      <span><img src="./assets/Splash/splash3.png" alt="Imagen 3"></span> <!--gris2-->
+      <span><img src="./assets/Splash/splash4.png" alt="Imagen 4"></span> <!--naranja-->
+      <span><img src="./assets/Splash/splash5.png" alt="Imagen 5"></span> <!--azul1-->
+      <span><img src="./assets/Splash/splash6.png" alt="Imagen 6"></span> <!--azul2-->
+      <span><img src="./assets/Splash/splash7.png" alt="Imagen 7"></span> <!--fucsia-->
+      <span><img src="./assets/Splash/splash8.png" alt="Imagen 8"></span> <!--verde-->
+      <span><img src="./assets/Splash/splash9.png" alt="Imagen 9"></span> <!--amarillo-->
+      <span><img src="./assets/Splash/splash10.png" alt="Imagen 10"></span> <!--rojo1-->
+      <span><img src="./assets/Splash/splash11.png" alt="Imagen 11"></span> <!--rojo2-->
+      <span><img src="./assets/Splash/splash12.png" alt="Imagen 12"></span> <!--morado2-->
+      <span><img src="./assets/Splash/splash13.png" alt="Imagen 13"></span> <!--negro-->
+
+    </article>
+  </div>
+  <!---->
+  <div class="containerAbsoluto"> <!--Contenedor del minijuego-->
+    <header><h1 class="loader">Adivina el color</h1></header>
+    
+    <div class="scoreboard"> <!--Aquí van los contadores-->
+      
+<input type="text" id="playerNameInput" placeholder="Ingresa tu nombre">
+<button onclick="submitName()">Enviar</button>
+
+      
+      <div class="niveles">Nivel: </div> <!--Contador de nivel-->
+      <div class="aciertos">Aciertos: <span id="correctCount">0</span></div><!--Contador de aciertos-->
+      <div class="fallos">Fallos: <span id="wrongCount">0</span></div><!--Contador de fallos-->
+    </div>
+    
+    <div class="colores">
+      <section class="color-code" id="colorCode"></section> <!--Color que hay que encontrar-->
+      <section class="color-options" id="colorOptions">color-options</section><!--Caja de opciones-->
+    </div>
+
+    <footer>
+      <a href="https://github.com/Danielaal3012/ProyectoAdivinaColor" target="_blank"><strong> ADIVINA EL COLOR</strong> - Equipo B</a> 
+    </footer>
+
+
+  </div>
+<script src="./codigo.js"></script>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyA5v_MPJNp8n_C6X-oZ6NAfwi1OC8lerSs",
+    authDomain: "adivina-el-color-34417.firebaseapp.com",
+    projectId: "adivina-el-color-34417",
+    storageBucket: "adivina-el-color-34417.appspot.com",
+    messagingSenderId: "87268475233",
+    appId: "1:87268475233:web:9ac2700ba856c399058520"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>
+</body>
+</html>
